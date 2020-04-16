@@ -11,7 +11,7 @@ function post {
 }
 
 function download_and_install {
-	curl https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-buster-20191020-cli.tar.xz | /usr/bin/tar -Jx -C $ROOTFS_DIR
+	curl https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-buster-20191020-cli.tar.xz --no-check-certificate | /usr/bin/tar -Jx -C $ROOTFS_DIR
 }
 
 pre
