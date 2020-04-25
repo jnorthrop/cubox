@@ -2,16 +2,17 @@ function pre {
 	get_ntpdate
 	check_if_partitioned
 	remove_all_partitions
-	create_one_partition ext2
-	mount_partition "-t ext2"
+	create_one_partition ext3
+	mount_partition "-t ext3"
 }
 
 function post {
+#	umount_on_top
 	umount_partition
 }
 
 function download_and_install {
-	curl -k http://os.archlinuxarm.org/os/ArchLinuxARM-imx6-cubox-latest.tar.gz | /usr/bin/tar -xvf -C $ROOTFS_DIR
+	curl http://os.archlinuxarm.org/os/ArchLinuxARM-imx6-cubox-latest.tar.gz | /usr/bin/tar -zx -C $ROOTFS_DIR
 }
 
 pre
