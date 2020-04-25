@@ -11,7 +11,7 @@ function post {
 }
 
 function download_and_install {
-	curl -k https://images.solid-build.xyz/IMX6/Debian/sr-imx6-debian-buster-20191020-cli.tar.xz | /usr/bin/tar -Jx -C $ROOTFS_DIR
+	curl -k http://os.archlinuxarm.org/os/ArchLinuxARM-imx6-cubox-latest.tar.gz | /usr/bin/tar -xvf -C $ROOTFS_DIR
 }
 
 pre
